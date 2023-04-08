@@ -1,0 +1,11 @@
+{
+    "$schema": "https://raw.githubusercontent.com/sumneko/vscode-lua/master/setting/schema.json",
+    "Lua.diagnostics.globals": [
+        "packer_bootstrap",
+        "vim",
+        "keymap",
+        "log",
+        "lazygit_toggle",
+        "pcall"
+    ]
+}
