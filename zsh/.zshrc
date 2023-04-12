@@ -152,6 +152,7 @@ alias calm-pr="open https://github.com/camelohq/camelo/pull"
 alias ys="yarn storybook"
 alias yd="yarn dev"
 alias dotfiles="cd ~/dotfiles"
+alias desktop="cd ~/Desktop"
 
 #quick acess neovim config
 alias cd-nvim="cd ~/.config/nvim"
