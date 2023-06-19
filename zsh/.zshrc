@@ -153,6 +153,7 @@ alias ys="yarn storybook"
 alias yd="yarn dev"
 alias dotfiles="cd ~/dotfiles"
 alias dt="cd ~/Desktop"
+alias udemy-test="cd ~/Desktop/learn-jest/udemy-NEXTJS-TESTING"
 
 #quick acess neovim config
 alias cd-nvim="cd ~/.config/nvim"
