@@ -126,7 +126,17 @@ capabilities.textDocument.colorProvider = { dynamicRegistration = false }
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "lua_ls", "solargraph", "rescriptls", "tsserver", "bashls", "tailwindcss", "jsonls", "graphql" }
+local servers = {
+	"lua_ls",
+	"solargraph",
+	"rescriptls",
+	"tsserver",
+	"bashls",
+	"tailwindcss",
+	"jsonls",
+	"graphql",
+	"pyright",
+}
 
 local lang_configs = {
 	lua_ls = setting_sumneko,
@@ -193,6 +203,7 @@ local lang_configs = {
 	},
 	jsonls = {},
 	graphql = {},
+	pyright = {},
 }
 
 for _, name in pairs(servers) do
