@@ -150,10 +150,23 @@ alias homepage="cd ~/Desktop/camelo/new-homepage"
 alias melange="cd ~/Desktop/melange"
 alias calm-pr="open https://github.com/camelohq/camelo/pull"
 alias ys="yarn storybook"
-alias yd="yarn dev"
 alias dotfiles="cd ~/dotfiles"
 alias dt="cd ~/Desktop"
+alias neovim="cd ~/dotfiles/nvim"
+
+
+# yarn | npm
+alias yd="yarn dev"
+alias ystart="yarn start"
+alias nstart="npm start"
+alias ya="yarn add"
+alias yad="yarn add -D"
+
+# run python code
+alias py3="python3"
+
 alias udemy-test="cd ~/Desktop/learn-jest/udemy-NEXTJS-TESTING"
+alias blue="cd ~/Desktop/bigo-blue"
 
 #quick acess neovim config
 alias cd-nvim="cd ~/.config/nvim"
