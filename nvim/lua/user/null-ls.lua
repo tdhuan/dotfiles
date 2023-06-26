@@ -14,11 +14,13 @@ local sources = {
 	formatting.erb_lint,
 	formatting.rubocop,
 	formatting.shfmt,
+	formatting.yapf,
 
 	code_actions.eslint_d,
 
 	diagnostics.rubocop,
 	diagnostics.eslint_d,
+	diagnostics.ruff,
 }
 
 local async_formatting = function(bufnr)
