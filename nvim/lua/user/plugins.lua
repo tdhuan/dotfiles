@@ -79,6 +79,7 @@ return require("packer").startup(function(use)
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 	})
 	use({ "akinsho/bufferline.nvim", tag = "*", requires = "kyazdani42/nvim-web-devicons" })
+	use({ "nvim-tree/nvim-web-devicons" })
 
 	-- Comment code
 	use({ "numToStr/Comment.nvim" })
