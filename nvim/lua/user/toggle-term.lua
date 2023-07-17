@@ -17,3 +17,4 @@ end
 keymap("n", "<leader>lz", "<cmd>lua lazygit_toggle()<CR>", opts)
 
 keymap("n", "<Leader>t", ":ToggleTerm size=20 direction=float <CR>", opts)
+keymap("n", "<Leader>`", ":ToggleTerm size=20 direction=horizontal <CR>", opts)
