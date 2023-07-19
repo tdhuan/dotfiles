@@ -136,6 +136,11 @@ export PATH=/opt/lua-5.4.0/src:$PATH
 
 export TOKEN="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"
 
+alias dotfiles="cd ~/dotfiles"
+alias dt="cd ~/Desktop"
+alias neovim="cd ~/dotfiles/nvim"
+alias cdzsh="cd ~/dotfiles/zsh"
+
 alias be="bundle exec"
 alias ber="bundle exec rails"
 alias berdmg="bunlde exec rails db:migrate"
@@ -152,9 +157,8 @@ alias homepage="cd ~/Desktop/camelo/new-homepage"
 alias melange="cd ~/Desktop/melange"
 alias calmp="open https://github.com/camelohq/camelo/pull"
 alias ys="yarn storybook"
-alias dotfiles="cd ~/dotfiles"
-alias dt="cd ~/Desktop"
-alias neovim="cd ~/dotfiles/nvim"
+alias calm-mail="~/Desktop/camelo/services/delivery_boy"
+alias start-mail="bundle exec ruby app.rb"
 
 
 # yarn | npm
