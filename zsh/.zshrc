@@ -139,6 +139,8 @@ alias dt="cd ~/Desktop"
 alias neovim="cd ~/dotfiles/nvim"
 alias cdzsh="cd ~/dotfiles/zsh"
 
+alias learning="cd /Volumes/E/learning"
+
 alias be="bundle exec"
 alias ber="bundle exec rails"
 alias berdmg="bunlde exec rails db:migrate"
@@ -170,7 +172,7 @@ alias yad="yarn add -D"
 alias py3="python3"
 
 alias udemy-test="cd ~/Desktop/learn-jest/udemy-NEXTJS-TESTING"
-alias blue="cd ~/Desktop/bigo-blue"
+alias blue="cd /Volumes/E/learning/bigo-blue"
 
 #quick acess neovim config
 alias cd-nvim="cd ~/.config/nvim"
