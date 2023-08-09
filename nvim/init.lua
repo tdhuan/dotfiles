@@ -45,7 +45,7 @@ require("user.monokai-pro")
 local command = require("user.command")
 
 command.create_filter_command()
-api.nvim_set_var("gruvbox_material_palette", "mix")
+api.nvim_set_var("gruvbox_material_palette", "original")
 api.nvim_set_var("gruvbox_material_background", "hard")
 api.nvim_set_var("gruvbox_material_better_performance", "1")
 cmd([[colorscheme gruvbox-material]])
