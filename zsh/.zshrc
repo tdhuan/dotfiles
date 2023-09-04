@@ -140,6 +140,7 @@ alias neovim="cd ~/dotfiles/nvim"
 alias cdzsh="cd ~/dotfiles/zsh"
 
 alias learning="cd /Volumes/E/learning"
+alias training="cd /Volumes/E/training"
 
 alias be="bundle exec"
 alias ber="bundle exec rails"
