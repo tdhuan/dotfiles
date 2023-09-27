@@ -69,7 +69,7 @@ return require("packer").startup(function(use)
 	-- Git support
 	use({
 		"lewis6991/gitsigns.nvim",
-		-- tag = 'release' -- To use the latest release
+		tag = 'v0.6' -- To use the latest release
 	})
 	use({ "tpope/vim-fugitive" })
 
@@ -78,7 +78,7 @@ return require("packer").startup(function(use)
 		"nvim-lualine/lualine.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 	})
-	use({ "akinsho/bufferline.nvim", tag = "*", requires = "kyazdani42/nvim-web-devicons" })
+	use({ "akinsho/bufferline.nvim", tag = "v1.*", requires = "kyazdani42/nvim-web-devicons" })
 	use({ "nvim-tree/nvim-web-devicons" })
 
 	-- Comment code
@@ -99,10 +99,10 @@ return require("packer").startup(function(use)
 		"junegunn/fzf.vim",
 		requires = { "junegunn/fzf", dir = "~/.fzf", run = "./install --all" },
 	})
-	use({
-		"nvim-telescope/telescope.nvim",
-		requires = { { "nvim-lua/plenary.nvim" } },
-	})
+	-- use({
+	-- 	"nvim-telescope/telescope.nvim",
+	-- 	requires = { { "nvim-lua/plenary.nvim" } },
+	-- })
 
 	-- Explorer tree
 	use({
