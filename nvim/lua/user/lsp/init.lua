@@ -136,6 +136,7 @@ local servers = {
 	"jsonls",
 	"graphql",
 	"pyright",
+	"html",
 }
 
 local lang_configs = {
@@ -204,6 +205,16 @@ local lang_configs = {
 	jsonls = {},
 	graphql = {},
 	pyright = {},
+	html = {
+		{
+			configurationSection = { "html", "css", "javascript" },
+			embeddedLanguages = {
+				css = true,
+				javascript = true,
+			},
+			provideFormatter = true,
+		},
+	},
 }
 
 for _, name in pairs(servers) do
