@@ -124,12 +124,16 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+#workspace
 alias calm-web="$HOME/workspaces/camelo/webapp"
 alias calm-be="$HOME/workspaces/camelo/services/sahara"
 alias calm-app="$HOME/workspaces/camelo/mobile"
+alias homepage="$HOME/workspaces/camelo/new-homepage"
+
+
 alias dotfiles="$HOME/dotfiles"
 alias neovim="$HOME/dotfiles/ubuntu/nvim"
-alias kitty="$HOME/dotfiles/ubuntu/kitty"
+# alias kitty="$HOME/dotfiles/ubuntu/kitty"
 alias cdzsh="$HOME/dotfiles/ubuntu/zsh"
 alias ubuntu="$HOME/dotfiles/ubuntu"
 
@@ -141,3 +145,7 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
