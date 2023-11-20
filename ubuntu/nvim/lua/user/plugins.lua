@@ -78,7 +78,7 @@ return require("packer").startup(function(use)
 		"nvim-lualine/lualine.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 	})
-	use({ "akinsho/bufferline.nvim", tag = "v1.*", requires = "kyazdani42/nvim-web-devicons" })
+	use({ "akinsho/bufferline.nvim", tag = "*", requires = "kyazdani42/nvim-web-devicons" })
 	use({ "nvim-tree/nvim-web-devicons" })
 
 	-- Comment code
