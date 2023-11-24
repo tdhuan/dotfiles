@@ -11,7 +11,7 @@ local sources = {
 	formatting.prettier,
 	formatting.rescript,
 	formatting.stylua,
-	formatting.erb_lint,
+	-- formatting.erb_lint,
 	formatting.rubocop,
 	formatting.shfmt,
 	formatting.yapf,
