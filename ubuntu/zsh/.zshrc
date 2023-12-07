@@ -130,6 +130,8 @@ alias calm-be="$HOME/workspaces/camelo/services/sahara"
 alias calm-app="$HOME/workspaces/camelo/mobile"
 alias homepage="$HOME/workspaces/camelo/new-homepage"
 
+alias testing="$HOME/testing"
+
 
 alias dotfiles="$HOME/dotfiles"
 alias neovim="$HOME/dotfiles/ubuntu/nvim"
