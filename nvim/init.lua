@@ -48,9 +48,13 @@ command.create_filter_command()
 api.nvim_set_var("gruvbox_material_palette", "original")
 api.nvim_set_var("gruvbox_material_background", "hard")
 api.nvim_set_var("gruvbox_material_better_performance", "1")
+api.nvim_set_var("gruvbox_material_ui_contrast", "low")
 cmd([[colorscheme gruvbox-material]])
 
-api.nvim_set_var("sonokai_style", "andromeda")
+-- github-nvim-theme
+-- cmd([[colorscheme github_dark_default]])
+
+-- api.nvim_set_var("sonokai_style", "atlantis")
 -- api.nvim_set_var("sonokai_better_performance", "1")
 -- cmd([[colorscheme sonokai]])
 
