@@ -129,6 +129,7 @@ return require("packer").startup(function(use)
 	-- easily search for, substitute, and abbreviate multiple variants of a word
 	use({ "tpope/vim-abolish" })
 	use({ "github/copilot.vim" })
+	use({ "Exafunction/codeium.vim" })
 
 	-- Markdown preview
 	use({ "ellisonleao/glow.nvim", branch = "main" })
