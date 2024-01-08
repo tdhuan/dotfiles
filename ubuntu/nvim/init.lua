@@ -50,6 +50,8 @@ api.nvim_set_var("gruvbox_material_background", "hard")
 api.nvim_set_var("gruvbox_material_better_performance", "1")
 cmd([[colorscheme gruvbox-material]])
 
+-- cmd([[colorscheme github_dark_default]])
+
 api.nvim_set_var("sonokai_style", "andromeda")
 -- api.nvim_set_var("sonokai_better_performance", "1")
 -- cmd([[colorscheme sonokai]])
