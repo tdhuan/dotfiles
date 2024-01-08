@@ -43,6 +43,7 @@ return require("packer").startup(function(use)
 	use("sainnhe/everforest")
 	use("loctvl842/monokai-pro.nvim")
 	use("sainnhe/sonokai")
+	use({ "projekt0n/github-nvim-theme" })
 
 	-- Language support
 	use("neovim/nvim-lspconfig")
@@ -128,6 +129,24 @@ return require("packer").startup(function(use)
 	-- easily search for, substitute, and abbreviate multiple variants of a word
 	use({ "tpope/vim-abolish" })
 	use({ "github/copilot.vim" })
+	use({
+		"Exafunction/codeium.vim",
+		config = function()
+			-- Change '<C-g>' here to any keycode you like.
+			vim.keymap.set("i", "<C-l>", function()
+				return vim.fn["codeium#Accept"]()
+			end, { expr = true, silent = true })
+			vim.keymap.set("i", "<c-;>", function()
+				return vim.fn["codeium#CycleCompletions"](1)
+			end, { expr = true, silent = true })
+			vim.keymap.set("i", "<c-,>", function()
+				return vim.fn["codeium#CycleCompletions"](-1)
+			end, { expr = true, silent = true })
+			vim.keymap.set("i", "<c-x>", function()
+				return vim.fn["codeium#Clear"]()
+			end, { expr = true, silent = true })
+		end,
+	})
 
 	-- Markdown preview
 	use({ "ellisonleao/glow.nvim", branch = "main" })
