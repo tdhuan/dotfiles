@@ -142,8 +142,11 @@ alias neovim="cd ~/dotfiles/nvim"
 alias cdzsh="cd ~/dotfiles/zsh"
 
 alias learning="cd /Volumes/E/learning"
+alias threejs="cd /Volumes/E/learning/threejs"
+
 alias training="cd /Volumes/E/training"
 alias workspace="cd /Volumes/E/workspace"
+alias testing="cd /Volumes/E/testing"
 
 alias be="bundle exec"
 alias ber="bundle exec rails"
