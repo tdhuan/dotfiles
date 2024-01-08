@@ -43,6 +43,7 @@ return require("packer").startup(function(use)
 	use("sainnhe/everforest")
 	use("loctvl842/monokai-pro.nvim")
 	use("sainnhe/sonokai")
+  use ("projekt0n/github-nvim-theme")
 
 	-- Language support
 	use("neovim/nvim-lspconfig")
