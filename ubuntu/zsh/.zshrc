@@ -115,6 +115,8 @@ eval "`fnm env`"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
 source /home/huantd/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+prompt_context () { }
 
 export PATH=$PATH:/usr/local/go/bin
 
