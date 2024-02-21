@@ -151,3 +151,4 @@ eval "$(rbenv init -)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+export PATH=/home/huantd/.local/bin:$PATH
