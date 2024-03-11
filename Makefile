@@ -1,3 +1,4 @@
+# This file is used for macos
 .PHONY: all
 
 all:
