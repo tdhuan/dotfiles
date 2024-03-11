@@ -127,6 +127,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 #workspace
+alias workspaces="$HOME/workspaces"
 alias calm-web="$HOME/workspaces/camelo/webapp"
 alias calm-be="$HOME/workspaces/camelo/services/sahara"
 alias calm-app="$HOME/workspaces/camelo/mobile"
