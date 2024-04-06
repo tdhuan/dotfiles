@@ -128,6 +128,7 @@ export NVM_DIR="$HOME/.nvm"
 
 #workspace
 alias calm-web="$HOME/workspaces/camelo/webapp"
+alias kiosk="$HOME/workspaces/camelo/kiosk"
 alias calm-be="$HOME/workspaces/camelo/services/sahara"
 alias calm-app="$HOME/workspaces/camelo/mobile"
 alias homepage="$HOME/workspaces/camelo/new-homepage"
