@@ -147,6 +147,14 @@ alias yd="yarn dev"
 alias ys="yarn storybook"
 alias yst="yarn start"
 
+# codespaces
+alias sps-workspaces="cd /workspaces"
+alias sps-web="cd /workspaces/camelo/webapp"
+alias sps-kiosk="cd /workspaces/camelo/kiosk"
+alias sps-be="cd /workspaces/camelo/services/sahara"
+alias sps--app="cd /workspaces/camelo/mobile"
+alias sps-homepage="cd /workspaces/camelo/new-homepage"
+
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
