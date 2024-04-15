@@ -129,6 +129,7 @@ export NVM_DIR="$HOME/.nvm"
 #workspace
 alias workspaces="$HOME/workspaces"
 alias calm-web="$HOME/workspaces/camelo/webapp"
+alias kiosk="$HOME/workspaces/camelo/kiosk"
 alias calm-be="$HOME/workspaces/camelo/services/sahara"
 alias calm-app="$HOME/workspaces/camelo/mobile"
 alias homepage="$HOME/workspaces/camelo/new-homepage"
@@ -145,6 +146,14 @@ alias ubuntu="$HOME/dotfiles/ubuntu"
 alias yd="yarn dev"
 alias ys="yarn storybook"
 alias yst="yarn start"
+
+# codespaces
+alias sps-workspaces="cd /workspaces"
+alias sps-web="cd /workspaces/camelo/webapp"
+alias sps-kiosk="cd /workspaces/camelo/kiosk"
+alias sps-be="cd /workspaces/camelo/services/sahara"
+alias sps--app="cd /workspaces/camelo/mobile"
+alias sps-homepage="cd /workspaces/camelo/new-homepage"
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
