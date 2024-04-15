@@ -55,19 +55,17 @@ treesitter.setup({
 			},
 		},
 	},
-	context_commentstring = {
-		enable = true,
+	require("ts_context_commentstring").setup({
 		enable_autocmd = false,
-		config = {
-			typescript = {
-				__default = "// %s",
-				__multiline = "/* %s */",
-				jsx_element = "{/* %s */}",
-				jsx_fragment = "{/* %s */}",
-				jsx_attribute = "// %s",
-				comment = "// %s",
-			},
-
+		languages = {
+			typescript = "// %s",
+			css = "/* %s */",
+			scss = "/* %s */",
+			html = "<!-- %s -->",
+			svelte = "<!-- %s -->",
+			vue = "<!-- %s -->",
+			json = "",
+			ruby = "# %s",
 			javascript = {
 				__default = "// %s",
 				__multiline = "/* %s */",
@@ -76,13 +74,7 @@ treesitter.setup({
 				jsx_attribute = "// %s",
 				comment = "// %s",
 			},
-			css = "/* %s */",
-			scss = "/* %s */",
-			html = "<!-- %s -->",
-			svelte = "<!-- %s -->",
-			vue = "<!-- %s -->",
-			json = "",
-			ruby = "# %s",
 		},
-	},
+	}),
 })
+
