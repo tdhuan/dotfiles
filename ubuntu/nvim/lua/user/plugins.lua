@@ -1,14 +1,14 @@
 local fn = vim.fn
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
-	packer_bootstrap = fn.system({
-		"git",
-		"clone",
-		"--depth",
-		"1",
-		"https://github.com/wbthomason/packer.nvim",
-		install_path,
-	})
+  packer_bootstrap = fn.system({
+    "git",
+    "clone",
+    "--depth",
+    "1",
+    "https://github.com/wbthomason/packer.nvim",
+    install_path,
+  })
 end
 
 -- Autocommand that reloads neovim whenever you save the plugins.lua file
@@ -22,138 +22,141 @@ vim.cmd([[
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
-	return
+  return
 end
 
 packer.init({
-	display = {
-		open_fn = function()
-			return require("packer.util").float({ border = "rounded" })
-		end,
-	},
+  display = {
+    open_fn = function()
+      return require("packer.util").float({ border = "rounded" })
+    end,
+  },
 })
 
 return require("packer").startup(function(use)
-	-- My plugins here
-	use("wbthomason/packer.nvim")
+  -- My plugins here
+  use("wbthomason/packer.nvim")
 
-	-- Color schemes
-	use("sainnhe/gruvbox-material")
-	use("rebelot/kanagawa.nvim")
-	use("sainnhe/everforest")
-	use("loctvl842/monokai-pro.nvim")
-	use("sainnhe/sonokai")
-  use ("projekt0n/github-nvim-theme")
+  -- Color schemes
+  use("sainnhe/gruvbox-material")
+  use("rebelot/kanagawa.nvim")
+  use("sainnhe/everforest")
+  use("loctvl842/monokai-pro.nvim")
+  use("sainnhe/sonokai")
+  use("projekt0n/github-nvim-theme")
 
-	-- Language support
-	use("neovim/nvim-lspconfig")
-	use("williamboman/nvim-lsp-installer")
-	use("nvim-lua/plenary.nvim")
-	use("rescript-lang/vim-rescript")
-	use({
-		"nvim-treesitter/nvim-treesitter",
-		run = ":TSUpdate",
-	})
-	use("folke/neodev.nvim")
-	use("preservim/tagbar")
-	use("simrat39/symbols-outline.nvim")
+  -- Language support
+  use("neovim/nvim-lspconfig")
+  use("williamboman/nvim-lsp-installer")
+  use("nvim-lua/plenary.nvim")
+  use("rescript-lang/vim-rescript")
+  use({
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  })
+  use("folke/neodev.nvim")
+  use("preservim/tagbar")
+  use("simrat39/symbols-outline.nvim")
 
-	-- Completion
-	use("hrsh7th/cmp-nvim-lsp")
-	use("hrsh7th/cmp-buffer")
-	use("hrsh7th/cmp-path")
-	use("hrsh7th/cmp-cmdline")
-	use("hrsh7th/nvim-cmp")
-	use("L3MON4D3/LuaSnip")
-	use("saadparwaiz1/cmp_luasnip")
+  -- Completion
+  use("hrsh7th/cmp-nvim-lsp")
+  use("hrsh7th/cmp-buffer")
+  use("hrsh7th/cmp-path")
+  use("hrsh7th/cmp-cmdline")
+  use("hrsh7th/nvim-cmp")
+  use("L3MON4D3/LuaSnip")
+  use("saadparwaiz1/cmp_luasnip")
 
-	-- Git support
-	use({
-		"lewis6991/gitsigns.nvim",
-		tag = 'v0.6' -- To use the latest release
-	})
-	use({ "tpope/vim-fugitive" })
+  -- Git support
+  use({
+    "lewis6991/gitsigns.nvim",
+    tag = 'v0.6' -- To use the latest release
+  })
+  use({ "tpope/vim-fugitive" })
 
-	-- Status line, buffer
-	use({
-		"nvim-lualine/lualine.nvim",
-		requires = { "kyazdani42/nvim-web-devicons", opt = true },
-	})
-	use({ "akinsho/bufferline.nvim", tag = "*", requires = "kyazdani42/nvim-web-devicons" })
-	use({ "nvim-tree/nvim-web-devicons" })
+  -- Status line, buffer
+  use({
+    "nvim-lualine/lualine.nvim",
+    requires = { "kyazdani42/nvim-web-devicons", opt = true },
+  })
+  use({ "akinsho/bufferline.nvim", tag = "*", requires = "kyazdani42/nvim-web-devicons" })
+  use({ "nvim-tree/nvim-web-devicons" })
 
-	-- Comment code
-	use({ "numToStr/Comment.nvim" })
-	use("JoosepAlviste/nvim-ts-context-commentstring")
+  -- Comment code
+  use({ "numToStr/Comment.nvim" })
+  use("JoosepAlviste/nvim-ts-context-commentstring")
 
-	-- Code actions, formatting
-	use({
-		"jose-elias-alvarez/null-ls.nvim",
-		config = function()
-			require("null-ls").setup()
-		end,
-		requires = { "nvim-lua/plenary.nvim" },
-	})
+  -- Code actions, formatting
+  use({ "lukas-reineke/lsp-format.nvim" })
+  use({
+    "jose-elias-alvarez/null-ls.nvim",
+    config = function()
+      require("null-ls").setup()
+    end,
+    requires = { "nvim-lua/plenary.nvim" },
+  })
 
-	-- Find, filer, preview, pick
-	use({
-		"junegunn/fzf.vim",
-		requires = { "junegunn/fzf", dir = "~/.fzf", run = "./install --all" },
-	})
-	-- use({
-	-- 	"nvim-telescope/telescope.nvim",
-	-- 	requires = { { "nvim-lua/plenary.nvim" } },
-	-- })
+  -- Find, filer, preview, pick
+  use({
+    "junegunn/fzf.vim",
+    requires = { "junegunn/fzf", dir = "~/.fzf", run = "./install --all" },
+  })
+  -- use({
+  -- 	"nvim-telescope/telescope.nvim",
+  -- 	requires = { { "nvim-lua/plenary.nvim" } },
+  -- })
 
-	-- Explorer tree
-	use({
-		"ms-jpq/chadtree",
-		branch = "chad",
-		run = "python3 -m chadtree deps",
-		cmd = "CHADopen",
-	})
+  -- Explorer tree
+  use({
+    "ms-jpq/chadtree",
+    branch = "chad",
+    run = "python3 -m chadtree deps",
+    cmd = "CHADopen",
+  })
 
-	-- Misc
-	use("tpope/vim-surround")
-	use("windwp/nvim-autopairs")
-	use("windwp/nvim-ts-autotag")
-	use("lukas-reineke/indent-blankline.nvim")
-	use("norcalli/nvim-colorizer.lua")
+  -- Misc
+  use("tpope/vim-surround")
+  use("windwp/nvim-autopairs")
+  use("windwp/nvim-ts-autotag")
+  use("lukas-reineke/indent-blankline.nvim")
+  use("norcalli/nvim-colorizer.lua")
 
-	-- Terminal
-	use({
-		"akinsho/toggleterm.nvim",
-		tag = "*",
-	})
+  -- Terminal
+  use({
+    "akinsho/toggleterm.nvim",
+    tag = "*",
+  })
 
-	-- easily search for, substitute, and abbreviate multiple variants of a word
-	use({ "tpope/vim-abolish" })
-	use({ "github/copilot.vim" })
-  use ({
+  -- easily search for, substitute, and abbreviate multiple variants of a word
+  use({ "tpope/vim-abolish" })
+  use({ "github/copilot.vim" })
+  use({
     'Exafunction/codeium.vim',
-    config = function ()
+    config = function()
       -- Change '<C-g>' here to any keycode you like.
-      vim.keymap.set('i', '<C-l>', function () return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
-      vim.keymap.set('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
-      vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
+      vim.keymap.set('i', '<C-l>', function() return vim.fn['codeium#Accept']() end, { expr = true, silent = true })
+      vim.keymap.set('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end,
+        { expr = true, silent = true })
+      vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end,
+        { expr = true, silent = true })
       vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
     end
   })
 
-	-- Markdown preview
-	use({ "ellisonleao/glow.nvim", branch = "main" })
-	use({
-		"iamcco/markdown-preview.nvim",
-		run = "cd app && npm install",
-		setup = function()
-			vim.g.mkdp_filetypes = { "markdown" }
-		end,
-		ft = { "markdown" },
-	})
+  -- Markdown preview
+  use({ "ellisonleao/glow.nvim", branch = "main" })
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = "cd app && npm install",
+    setup = function()
+      vim.g.mkdp_filetypes = { "markdown" }
+    end,
+    ft = { "markdown" },
+  })
 
-	-- Automatically set up your configuration after cloning packer.nvim
-	-- Put this at the end after all plugins
-	if packer_bootstrap then
-		require("packer").sync()
-	end
+  -- Automatically set up your configuration after cloning packer.nvim
+  -- Put this at the end after all plugins
+  if packer_bootstrap then
+    require("packer").sync()
+  end
 end)
