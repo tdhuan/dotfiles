@@ -101,10 +101,10 @@ return require("packer").startup(function(use)
     "junegunn/fzf.vim",
     requires = { "junegunn/fzf", dir = "~/.fzf", run = "./install --all" },
   })
-  -- use({
-  -- 	"nvim-telescope/telescope.nvim",
-  -- 	requires = { { "nvim-lua/plenary.nvim" } },
-  -- })
+  use({
+  	"nvim-telescope/telescope.nvim",
+  	requires = { { "nvim-lua/plenary.nvim" } },
+  })
 
   -- Explorer tree
   use({
