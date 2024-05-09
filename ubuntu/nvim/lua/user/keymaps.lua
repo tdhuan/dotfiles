@@ -79,6 +79,13 @@ keymap("n", "<leader>ll", "L", opts)
 keymap("n", "<leader>hh", "H", opts)
 keymap("n", "<leader>mm", "M", opts)
 
+-- Quickfix
+keymap("n", "<leader>co", ":copen<CR>", opts)
+keymap("n", "<leader>ccl", ":cclose<CR>", opts)
+keymap("n", "<leader>cn", ":cnext<CR>", opts)
+keymap("n", "<leader>cp", ":cprevious<CR>", opts)
+
+
 ---------------------------- INSERT  ----------------------------
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
