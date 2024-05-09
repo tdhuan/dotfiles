@@ -61,10 +61,13 @@ vim.api.nvim_set_keymap("n", "<space>ld", "<cmd>lua vim.diagnostic.setloclist()<
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
-  require("lsp-format").on_attach(client, bufnr)
   if client.name == "tsserver" then
     client.server_capabilities.documentFormattingProvider = false
     -- vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]])
+  end
+
+  if client.name == 'solargraph' then
+    require("lsp-format").on_attach(client, bufnr)
   end
 
   -- if client.name == "eslint" then
