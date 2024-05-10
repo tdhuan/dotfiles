@@ -134,6 +134,10 @@ alias calm-be="$HOME/workspaces/camelo/services/sahara"
 alias calm-app="$HOME/workspaces/camelo/mobile"
 alias homepage="$HOME/workspaces/camelo/new-homepage"
 
+# use for upgrade deps
+alias cweb="$HOME/workspaces/CALM/webapp"
+alias cbe="$HOME/workspaces/CALM/services/sahara"
+
 alias testing="$HOME/testing"
 
 
