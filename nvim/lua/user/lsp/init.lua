@@ -1,3 +1,4 @@
+require("lsp-format").setup({})
 require("neodev").setup({
 	library = {
 		enabled = true, -- when not enabled, neodev will not change any settings to the LSP server
@@ -22,7 +23,7 @@ require("neodev").setup({
 	pathStrict = true,
 })
 
-local setting_sumneko = require("user.lsp.providers.sumneko_lua")
+-- local setting_sumneko = require("user.lsp.providers.sumneko_lua")
 local cmp_lsp_status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not cmp_lsp_status_ok then
 	return
@@ -65,6 +66,10 @@ local on_attach = function(client, bufnr)
 		-- vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]])
 	end
 
+	if client.name == "solargraph" then
+		require("lsp-format").on_attach(client, bufnr)
+	end
+
 	-- if client.name == "eslint" then
 	-- 	vim.diagnostic.config({
 	-- 		virtual_text = {
@@ -100,7 +105,7 @@ local on_attach = function(client, bufnr)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-	vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>f", "<cmd>lua vim.lsp.buf.formatting_sync()<CR>", opts)
+	vim.api.nvim_buf_set_keymap(bufnr, "n", "<space>f", "<cmd>lua vim.lsp.buf.format()<CR>", opts)
 
 	if client.server_capabilities.document_highlight then
 		vim.api.nvim_exec(
@@ -136,16 +141,16 @@ local servers = {
 	"jsonls",
 	"graphql",
 	"pyright",
-	"html",
 }
 
 local lang_configs = {
-	lua_ls = setting_sumneko,
+	lua_ls = {},
 	solargraph = {
 		cmd = { "solargraph", "stdio" },
 		filetypes = { "ruby", "rb", "eruby", "rakefile" },
 		init_options = { formatting = true },
-		settings = { diagnostics = false, autoformat = false, formatting = true },
+		settings = { solargraph = { diagnostics = true, autoformat = false, formatting = false } },
+		on_attach = require("lsp-format").on_attach,
 	},
 	rescriptls = {
 		cmd = {
@@ -205,16 +210,6 @@ local lang_configs = {
 	jsonls = {},
 	graphql = {},
 	pyright = {},
-	html = {
-		{
-			configurationSection = { "html", "css", "javascript" },
-			embeddedLanguages = {
-				css = true,
-				javascript = true,
-			},
-			provideFormatter = true,
-		},
-	},
 }
 
 for _, name in pairs(servers) do
