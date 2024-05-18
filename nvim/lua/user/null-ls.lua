@@ -18,7 +18,7 @@ local sources = {
 
 	code_actions.eslint_d,
 
-	diagnostics.rubocop,
+	-- diagnostics.rubocop,
 	diagnostics.eslint_d,
 	diagnostics.ruff,
 }
