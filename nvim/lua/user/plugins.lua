@@ -46,6 +46,9 @@ return require("packer").startup(function(use)
 	use({ "projekt0n/github-nvim-theme" })
 
 	-- Language support
+	use({
+		"williamboman/mason.nvim",
+	})
 	use("neovim/nvim-lspconfig")
 	use("williamboman/nvim-lsp-installer")
 	use("nvim-lua/plenary.nvim")
