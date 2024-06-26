@@ -59,7 +59,7 @@ nnoremap <silent> <leader>A :Windows<CR>
 nnoremap <silent> <leader>B :Buffers<CR>
 
 function! FzfVisualSearch(query, fullscreen)
-  let command_fmt = 'rg --column --line-number --no-heading --fixed-strings --hidden --color=always --glob "!{.git, node_modules, graphql.ts}" --iglob "!/graphql/codegen_generated/graphql.ts" -- %s || true'
+  let command_fmt = 'rg --column --line-number --no-heading --smart-case --fixed-strings --hidden --color=always --glob "!{.git, node_modules, graphql.ts}" --iglob "!/graphql/codegen_generated/graphql.ts" -- %s || true'
   let initial_command = printf(command_fmt, shellescape(a:query))
   call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(), a:fullscreen)
 endfunction
