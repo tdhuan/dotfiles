@@ -58,11 +58,11 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
 null_ls.setup({
   -- add your sources / config options here
-  -- cmd = { "nvim" },
+  cmd = { "nvim" },
   sources = sources,
   diagnostics_format = "[#{s} - #{c}] #{m}",
   debug = false,
-  --[[ on_attach = function(client, bufnr)
+  on_attach = function(client, bufnr)
     if client.supports_method("textDocument/formatting") then
       vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
       vim.api.nvim_create_autocmd("BufWritePost", {
@@ -73,5 +73,5 @@ null_ls.setup({
         end,
       })
     end
-  end, ]]
+  end,
 })
