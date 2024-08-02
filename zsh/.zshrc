@@ -187,6 +187,9 @@ alias cd-nvim="cd ~/.config/nvim"
 #quick call lazygit
 alias lz="lazygit"
 
+# delete all branches in repository except master
+alias delete-branches="git branch | grep -v "master" | xargs git branch -D"
+
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # ---- Start Config for bat https://github.com/sharkdp/bat ----
