@@ -199,3 +199,4 @@ help() {
     "$@" --help 2>&1 | bathelp
 }
 # ---- End Config for bat https://github.com/sharkdp/bat ----
+export NVIM_APPNAME=nvim
