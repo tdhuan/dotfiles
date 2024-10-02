@@ -175,3 +175,5 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export PATH=/home/huantd/.local/bin:$PATH
 export DOCKER_HOST=unix:///var/run/docker.sock
+
+export NVIM_APPNAME=nvim
