@@ -2,6 +2,7 @@
 
 create:
 	stow -t ~/.config/nvim nvim
+	stow -t ~/.config/lzvim lzvim
 	stow -t ~/.config/kitty kitty
 	stow -t ~ zsh
 	stow -t ~ tmux
