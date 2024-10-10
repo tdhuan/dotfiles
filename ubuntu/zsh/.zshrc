@@ -173,7 +173,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 export PATH=/home/huantd/.local/bin:$PATH
 export DOCKER_HOST=unix:///var/run/docker.sock
 
-export NVIM_APPNAME=lzvim
+export NVIM_APPNAME=nvim
 
 # fnm
 FNM_PATH="/home/huantd/.local/share/fnm"
@@ -182,3 +182,5 @@ if [ -d "$FNM_PATH" ]; then
   eval "`fnm env`"
 fi
 source /home/huantd/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
