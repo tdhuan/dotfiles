@@ -165,9 +165,6 @@ alias sps-be="cd /workspaces/camelo/services/sahara"
 alias sps--app="cd /workspaces/camelo/mobile"
 alias sps-homepage="cd /workspaces/camelo/new-homepage"
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -177,3 +174,13 @@ export PATH=/home/huantd/.local/bin:$PATH
 export DOCKER_HOST=unix:///var/run/docker.sock
 
 export NVIM_APPNAME=nvim
+
+# fnm
+FNM_PATH="/home/huantd/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="/home/huantd/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
+source /home/huantd/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"

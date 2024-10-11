@@ -1,7 +1,8 @@
 .PHONY: create
 
 create:
-	stow -t ~/.config/nvim nvim
+	# stow -t ~/.config/nvim nvim
+	stow -t ~/.config/lzvim nvim
 	stow -t ~/.config/kitty kitty
 	stow -t ~ zsh
 	stow -t ~ tmux
