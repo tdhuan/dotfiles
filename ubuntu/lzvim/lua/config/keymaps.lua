@@ -26,5 +26,4 @@ map("n", "<leader>sp", ":split<CR>", mergeWithDescription(opts, "Split window"))
 map("n", "<leader>nhl", ":nohlsearch<CR>", mergeWithDescription(opts, "No highlight search"))
 map("n", "<Tab>", "<C-^>", mergeWithDescription(opts, "Switch between two files"))
 map("n", "<C-A>", "gg<S-V>G<CR>", mergeWithDescription(opts, "Select all"))
-map("v", "p", '"_dP', mergeWithDescription(opts, "Disable copy of replaced word")
-
+map("v", "p", '"_dP', mergeWithDescription(opts, "Disable copy of replaced word"))
