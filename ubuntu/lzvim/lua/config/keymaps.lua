@@ -34,3 +34,8 @@ map("x", "J", ":move '>+1<CR>gv-gv", mergeWithDescription(opts, "Move text down"
 map("x", "K", ":move '<-2<CR>gv-gv", mergeWithDescription(opts, "Move text up"))
 map("x", "<A-j>", ":move '>+1<CR>gv-gv", mergeWithDescription(opts, "Move text down"))
 map("x", "<A-k>", ":move '<-2<CR>gv-gv", mergeWithDescription(opts, "Move text up"))
+
+-- Get the current file path
+-- https://vimtricks.com/p/get-the-current-file-path/
+-- use "*p to patse it
+map("n", "<leader>cp", ":let @*=expand('%')<CR>", mergeWithDescription(opts, "Get the current file path"))
