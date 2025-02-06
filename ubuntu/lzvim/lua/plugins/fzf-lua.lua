@@ -14,4 +14,7 @@ return {
       },
     },
   },
+  keys = {
+    { "<leader>;", LazyVim.pick("files", { root = false }), desc = "Find Files (cwd)" },
+  },
 }
