@@ -3,6 +3,7 @@ return {
   opts = {
     ensure_installed = {
       "stylua",
+      "lua-language-server",
       "shfmt",
       "vtsls",
       "eslint-lsp",
@@ -12,6 +13,7 @@ return {
       "solargraph",
       "rubocop",
       "rescript-language-server",
+      "json-lsp",
     },
   },
 }
