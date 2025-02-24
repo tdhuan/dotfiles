@@ -2,6 +2,7 @@
 .PHONY: all
 
 all:
+	stow -t ~/.config/lzvim lzvim
 	stow -t ~/.config/nvim nvim
 	stow -t ~/.config/kitty kitty
 	stow -t ~ zsh
