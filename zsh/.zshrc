@@ -139,12 +139,12 @@ alias dt="cd ~/Desktop"
 alias neovim="cd ~/dotfiles/nvim"
 alias cdzsh="cd ~/dotfiles/zsh"
 
-alias learning="cd /Volumes/E/learning"
-alias threejs="cd /Volumes/E/learning/threejs"
+alias learning="cd ~/learning"
+alias threejs="cd ~/learning/threejs"
 
-alias training="cd /Volumes/E/training"
-alias workspace="cd /Volumes/E/workspace"
-alias testing="cd /Volumes/E/testing"
+alias training="cd ~/training"
+alias workspaces="cd ~/workspaces"
+alias testing="cd ~/testing"
 
 alias be="bundle exec"
 alias ber="bundle exec rails"
@@ -201,3 +201,4 @@ help() {
 # ---- End Config for bat https://github.com/sharkdp/bat ----
 export NVIM_APPNAME=lzvim
 eval "$(rbenv init - zsh)"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
