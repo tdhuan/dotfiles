@@ -14,12 +14,27 @@ return {
       vim.g.gruvbox_material_better_performance = 1
     end,
   },
+  {
+    "andreypopp/vim-colors-plain",
+  },
+  {
+    "projekt0n/github-nvim-theme",
+  },
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    opts = {
+      disable_italics = true, -- Disable italics
+    },
+  },
 
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "gruvbox-material",
+      -- colorscheme = "rose-pine-main",
+      -- colorscheme = "plain",
     },
   },
 }
