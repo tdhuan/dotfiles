@@ -2,8 +2,7 @@
 #-- Credits: contains some code from https://mths.be/macos
 
 defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
-
-defaults write -g ApplePressAndHoldEnabled -bool true
+defaults write -g ApplePressAndHoldEnabled -bool false
 
 # Save screenshots to the desktop
 defaults write com.apple.screencapture location ~/screenshots
