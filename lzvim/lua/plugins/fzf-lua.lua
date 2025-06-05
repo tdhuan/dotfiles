@@ -10,11 +10,15 @@ return {
       preview = {
         layout = "flex", -- Show preview below the results
         vertical = "down:45%", -- up|down:size
-        horizontal = "right:50%",
+        horizontal = "right:45%",
       },
+    },
+    files = {
+      cwd_prompt = false,
+      fzf_opts = { ["--with-nth"] = "1.." }, -- Always show full paths
     },
   },
   keys = {
-    { "<leader>;", LazyVim.pick("files", { root = false }), desc = "Find Files (cwd)" },
+    { "<leader>;", "<cmd>FzfLua files<cr>", desc = "Find files" },
   },
 }
