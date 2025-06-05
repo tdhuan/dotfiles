@@ -202,3 +202,6 @@ help() {
 export NVIM_APPNAME=lzvim
 eval "$(rbenv init - zsh)"
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
+# Added by Windsurf
+export PATH="/Users/huantd/.codeium/windsurf/bin:$PATH"
