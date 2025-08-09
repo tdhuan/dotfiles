@@ -171,6 +171,7 @@ alias threejs="cd ~/learning/threejs"
 alias training="cd ~/training"
 alias workspaces="cd ~/workspaces"
 alias testing="cd ~/testing"
+alias personal="cd ~/personal"
 
 alias be="bundle exec"
 alias ber="bundle exec rails"
