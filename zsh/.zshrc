@@ -175,7 +175,7 @@ alias personal="cd ~/personal"
 
 alias be="bundle exec"
 alias ber="bundle exec rails"
-alias berdmg="bunlde exec rails db:migrate"
+alias berdmg="bundle exec rails db:migrate"
 alias berg="bundle exec rails generate"
 alias bergm="bundle exec rails generate migration"
 alias bergm="bundle exec rails generate model"
@@ -206,7 +206,7 @@ alias py3="python3"
 alias udemy-test="cd ~/Desktop/learn-jest/udemy-NEXTJS-TESTING"
 alias blue="cd /Volumes/E/learning/bigo-blue"
 
-#quick acess neovim config
+# quick access neovim config
 alias cd-nvim="cd ~/.config/nvim"
 
 #quick call lazygit
