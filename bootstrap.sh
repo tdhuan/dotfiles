@@ -17,6 +17,11 @@ fi
 create_dir() {
   local dir="$1"
   echo "Create ${dir} directory"
+  if [ -d "${dir}" ]; then
+    echo "Already created ${dir} directory"
+    return 0
+  fi
+
   if mkdir -p "${dir}"; then
     echo "Created ${dir} directory"
   else
