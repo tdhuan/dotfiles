@@ -1,23 +1,94 @@
 #!/bin/bash
-set -euo pipefail
 
-echo "Create workspaces directory"
-mkdir -p "$HOME/workspaces" && echo "Created workspaces directory" || { echo "Failed to create workspaces directory" >&2; exit 1; }
-echo "Create testing directory"
-mkdir -p "$HOME/testing" && echo "Created testing directory" || { echo "Failed to create testing directory" >&2; exit 1; }
-echo "Create learning directory"
-mkdir -p "$HOME/learning" && echo "Created learning directory" || { echo "Failed to create learning directory" >&2; exit 1; }
-echo "Create ~/.config/lzvim directory"
-mkdir -p "$HOME/.config/lzvim" && echo "Created ~/.config/lzvim directory" || { echo "Failed to create ~/.config/lzvim directory" >&2; exit 1; }
-echo "Create ~/.config/nvim directory"
-mkdir -p "$HOME/.config/nvim" && echo "Created ~/.config/nvim directory" || { echo "Failed to create ~/.config/nvim directory" >&2; exit 1; }
-echo "Create ~/.config/kitty directory"
-mkdir -p "$HOME/.config/kitty" && echo "Created ~/.config/kitty directory" || { echo "Failed to create ~/.config/kitty directory" >&2; exit 1; }
-echo "Create screenshots directory"
-mkdir -p "$HOME/screenshots" && echo "Created screenshots directory" || { echo "Failed to create screenshots directory" >&2; exit 1; }
-echo "Install bat"
-brew install bat && echo "Installed bat" || { echo "Failed to install bat" >&2; exit 1; }
-echo "Install ripgrep"
-brew install ripgrep && echo "Installed ripgrep" || { echo "Failed to install ripgrep" >&2; exit 1; }
-echo "Install stow"
-brew install stow && echo "Installed stow" || { echo "Failed to install stow" >&2; exit 1; }
+# Detect if this script is being sourced (supports bash and zsh)
+_BOOTSTRAP_SOURCED=0
+if [ -n "${ZSH_EVAL_CONTEXT:-}" ]; then
+  case $ZSH_EVAL_CONTEXT in *:file) _BOOTSTRAP_SOURCED=1;; esac
+elif [ -n "${BASH_SOURCE:-}" ]; then
+  # shellcheck disable=SC2128 # BASH_SOURCE used intentionally
+  if [ "${BASH_SOURCE[0]:-}" != "$0" ]; then _BOOTSTRAP_SOURCED=1; fi
+fi
+
+# Only enforce strict mode when executed directly, not when sourced
+if [ "$_BOOTSTRAP_SOURCED" -eq 0 ]; then
+  set -euo pipefail
+fi
+
+create_dir() {
+  local dir="$1"
+  echo "Create ${dir} directory"
+  if [ -d "${dir}" ]; then
+    echo "Already created ${dir} directory"
+    return 0
+  fi
+
+  if mkdir -p "${dir}"; then
+    echo "Created ${dir} directory"
+  else
+    echo "Failed to create ${dir} directory" >&2
+    fail 1
+  fi
+}
+
+fail() {
+  # Exit if executed directly; return if sourced
+  local code=${1:-1}
+  if [ "$_BOOTSTRAP_SOURCED" -eq 1 ]; then
+    return "$code"
+  else
+    exit "$code"
+  fi
+}
+
+install_pkg() {
+  local pkg="$1"
+  echo "Install ${pkg}"
+
+  # Skip if already installed
+  if brew list --formula --versions "${pkg}" >/dev/null 2>&1; then
+    echo "Already installed ${pkg}"
+    return 0
+  fi
+
+  if brew install "${pkg}"; then
+    echo "Installed ${pkg}"
+  else
+    echo "Failed to install ${pkg}" >&2
+    fail 1
+  fi
+}
+
+# Ensure Homebrew is available
+if ! command -v brew >/dev/null 2>&1; then
+  echo "Homebrew not found. Please install from https://brew.sh and re-run." >&2
+  fail 1
+fi
+
+main() {
+  directories=(
+    "$HOME/workspaces"
+    "$HOME/testing"
+    "$HOME/learning"
+    "$HOME/.config/lzvim"
+    "$HOME/.config/nvim"
+    "$HOME/.config/kitty"
+    "$HOME/screenshots"
+  )
+
+  for dir in "${directories[@]}"; do
+    create_dir "$dir" || return 1
+  done
+
+  packages=(bat ripgrep stow)
+
+  for pkg in "${packages[@]}"; do
+    install_pkg "$pkg" || return 1
+  done
+}
+
+# Execute when run directly; when sourced, run and return status without exiting the shell
+if [ "$_BOOTSTRAP_SOURCED" -eq 0 ]; then
+  main "$@"
+else
+  main "$@" || return $?
+fi
