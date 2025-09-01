@@ -4,14 +4,37 @@ set -euo pipefail
 create_dir() {
   local dir="$1"
   echo "Create ${dir} directory"
-  mkdir -p "${dir}" && echo "Created ${dir} directory" || { echo "Failed to create ${dir} directory" >&2; exit 1; }
+  if mkdir -p "${dir}"; then
+    echo "Created ${dir} directory"
+  else
+    echo "Failed to create ${dir} directory" >&2
+    exit 1
+  fi
 }
 
 install_pkg() {
   local pkg="$1"
   echo "Install ${pkg}"
-  brew install "${pkg}" && echo "Installed ${pkg}" || { echo "Failed to install ${pkg}" >&2; exit 1; }
+
+  # Skip if already installed
+  if brew list --formula --versions "${pkg}" >/dev/null 2>&1; then
+    echo "Already installed ${pkg}"
+    return 0
+  fi
+
+  if brew install "${pkg}"; then
+    echo "Installed ${pkg}"
+  else
+    echo "Failed to install ${pkg}" >&2
+    exit 1
+  fi
 }
+
+# Ensure Homebrew is available
+if ! command -v brew >/dev/null 2>&1; then
+  echo "Homebrew not found. Please install from https://brew.sh and re-run." >&2
+  exit 1
+fi
 
 directories=(
   "$HOME/workspaces"
@@ -32,4 +55,3 @@ packages=(bat ripgrep stow)
 for pkg in "${packages[@]}"; do
   install_pkg "$pkg"
 done
-
