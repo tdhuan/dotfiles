@@ -3,11 +3,11 @@ local wezterm = require("wezterm")
 local config = {}
 
 -- Color scheme
-config.color_scheme = "Palenight (Gogh)"
+config.color_scheme = "Atlas (base16)"
 
 -- Font configuration
 config.font = wezterm.font("Iosevka Term", { weight = "DemiBold" })
-config.font_size = 15.0
+config.font_size = 14.0
 
 -- Window configuration
 config.window_padding = {
@@ -17,13 +17,9 @@ config.window_padding = {
 	bottom = 10,
 }
 
-config.window_background_opacity = 0.95
-config.macos_window_background_blur = 20
-
 -- Tab bar
 config.use_fancy_tab_bar = false
-config.tab_bar_at_bottom = true
-config.hide_tab_bar_if_only_one_tab = true
+config.tab_max_width = 100
 
 -- Disable default key bindings that conflict with vim
 config.keys = {
