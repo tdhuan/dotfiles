@@ -86,7 +86,7 @@ main() {
 
   # Install base tool(s) for Ubuntu
   # Note: On Ubuntu/Debian, the 'bat' binary is named 'batcat'.
-  packages=(bat)
+  packages=(bat ripgrep stow)
   for pkg in "${packages[@]}"; do
     install_pkg "$pkg" || return 1
   done
