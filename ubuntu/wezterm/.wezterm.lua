@@ -6,7 +6,7 @@ local config = {}
 config.color_scheme = "Atlas (base16)"
 
 -- Font configuration for Ubuntu
-config.font = wezterm.font("Iosevka Term", { weight = "DemiBold" })
+config.font = wezterm.font("Iosevka Term", { weight = "Medium" })
 config.font_size = 11.0
 
 -- Window configuration
@@ -20,6 +20,8 @@ config.window_padding = {
 -- Tab bar
 config.use_fancy_tab_bar = false
 config.tab_max_width = 100
+
+config.default_cursor_style = "BlinkingBar"
 
 -- Disable default key bindings that conflict with vim
 config.keys = {
