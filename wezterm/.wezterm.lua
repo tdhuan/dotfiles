@@ -21,6 +21,8 @@ config.window_padding = {
 config.use_fancy_tab_bar = false
 config.tab_max_width = 100
 
+config.default_cursor_style = "BlinkingBar"
+
 -- Disable default key bindings that conflict with vim
 config.keys = {
 	{
