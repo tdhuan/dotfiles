@@ -7,6 +7,7 @@ create:
 	stow -t ~ wezterm
 	stow -t ~ zsh
 	stow -t ~ tmux
+	stow -t ~ claude
 	
 delete:
 	# stow -D -t ~/.config/nvim nvim
@@ -14,3 +15,4 @@ delete:
 	stow -D -t ~ wezterm
 	stow -D -t ~ zsh
 	stow -D -t ~ tmux
+	stow -D -t ~ claude
