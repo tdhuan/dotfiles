@@ -3,7 +3,7 @@ local wezterm = require("wezterm")
 local config = {}
 
 -- Color scheme
-config.color_scheme = "Atlas (base16)"
+config.color_scheme = "Aci (Gogh)"
 
 -- Font configuration
 config.font = wezterm.font("Iosevka Term", { weight = "DemiBold" })
