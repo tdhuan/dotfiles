@@ -189,6 +189,7 @@ alias kiosk="cd ~/workspaces/camelo/kiosk"
 alias homepage="cd ~/workspaces/camelo/new-homepage"
 alias calmp="open https://github.com/camelohq/camelo/pull"
 alias ys="yarn storybook"
+alias bug-fixes="cd ~/workspaces/calm-bug-fixes"
 alias calm-mail="~/Desktop/camelo/services/delivery_boy"
 alias start-mail="bundle exec ruby app.rb"
 
@@ -232,3 +233,6 @@ export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 # Added by Windsurf
 export PATH="$HOME/.codeium/windsurf/bin:$PATH"
+
+# Added by Antigravity
+export PATH="/Users/huantd/.antigravity/antigravity/bin:$PATH"

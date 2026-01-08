@@ -160,6 +160,7 @@ alias calm-web="$HOME/workspaces/camelo/webapp"
 alias kiosk="$HOME/workspaces/camelo/kiosk"
 alias calm-be="$HOME/workspaces/camelo/services/sahara"
 alias calm-app="$HOME/workspaces/camelo/mobile"
+alias bug-fixes="cd ~/workspaces/calm-bug-fixes"
 alias homepage="$HOME/workspaces/camelo/new-homepage"
 
 #personal
