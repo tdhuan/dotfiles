@@ -3,7 +3,7 @@
 # Detect if this script is being sourced (supports bash and zsh)
 _BOOTSTRAP_SOURCED=0
 if [ -n "${ZSH_EVAL_CONTEXT:-}" ]; then
-  case $ZSH_EVAL_CONTEXT in *:file) _BOOTSTRAP_SOURCED=1;; esac
+  case $ZSH_EVAL_CONTEXT in *:file) _BOOTSTRAP_SOURCED=1 ;; esac
 elif [ -n "${BASH_SOURCE:-}" ]; then
   # shellcheck disable=SC2128 # BASH_SOURCE used intentionally
   if [ "${BASH_SOURCE[0]:-}" != "$0" ]; then _BOOTSTRAP_SOURCED=1; fi
@@ -78,6 +78,16 @@ main() {
   for dir in "${directories[@]}"; do
     create_dir "$dir" || return 1
   done
+
+  # macOS-specific directories
+  if [ "$(uname)" = "Darwin" ]; then
+    macos_dirs=(
+      "$HOME/.config/karabiner"
+    )
+    for dir in "${macos_dirs[@]}"; do
+      create_dir "$dir" || return 1
+    done
+  fi
 
   packages=(bat ripgrep stow)
 
