@@ -1,5 +1,5 @@
 return {
-  "williamboman/mason.nvim",
+  "mason-org/mason.nvim",
   opts = {
     ensure_installed = {
       "stylua",
@@ -14,6 +14,7 @@ return {
       "rubocop",
       "rescript-language-server",
       "json-lsp",
+      "astro-language-server",
     },
   },
 }
