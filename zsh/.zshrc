@@ -236,3 +236,6 @@ export PATH="$HOME/.codeium/windsurf/bin:$PATH"
 
 # Added by Antigravity
 export PATH="/Users/huantd/.antigravity/antigravity/bin:$PATH"
+
+# opencode
+export PATH=/Users/huantd/.opencode/bin:$PATH
